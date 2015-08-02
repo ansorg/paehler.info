@@ -1,0 +1,8 @@
+#https://www.drupal.org/theme-guide/8/assets
+global-styling:
+  css:
+    theme:
+      css/hp.css: {}
+      css/print.css: { media: print }
+  js:
+      js/hp.js: {}

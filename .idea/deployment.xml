@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" serverName="mx.hp">
+    <serverData>
+      <paths name="mx.hp">
+        <serverdata>
+          <mappings>
+            <mapping deploy="hp" local="$PROJECT_DIR$/themes/hp" web="/hp" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>

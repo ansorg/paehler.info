@@ -1,0 +1,319 @@
+$logo-green: #02b053;
+$logo-orange: #fa813f;
+
+$toolbar-back: darken($logo-green, 0);
+$toolbar-front: lighten($logo-orange, 0);
+$toolbar-border-width: 1px;
+
+$accent-border-width: 1px;
+
+$footer-back: lighten($logo-orange, 9);
+
+@mixin display-flex {
+  -webkit-display: flex;
+  display: flex;
+}
+
+@mixin flex($grow:1, $shrink:0, $min:auto) {
+  -webkit-flex: $grow $shrink $min;
+  flex: $grow $shrink $min;
+}
+
+@mixin flex-direction($dir:row) {
+  -webkit-flex-direction: $dir;
+  flex-direction: $dir;
+}
+
+@mixin flex-wrap($mode:nowrap) {
+  -webkit-flex-flow: row wrap;
+  -webkit-flex-wrap: $mode;
+  flex-wrap: $mode;
+}
+
+@mixin flex-justify($mode:initial) {
+  -webkit-justify-content: $mode;
+  justify-content: $mode;
+}
+
+html, body, div, p, header, footer, main, nav, ul, li, a, span, img { box-sizing: border-box; }
+header, main, footer { display: block; }
+
+body {
+  font-family: 'Oxygen', sans-serif;
+  line-height: 1.4rem;
+  background-color: white;
+  margin: 0;
+  padding: 0;
+}
+
+//header
+#block-views-block-homepage-slideshow-block-1, header nav ul, main, footer {
+  background-color: white;
+  max-width: 60rem;
+  margin: 0 auto;
+}
+
+h1, h2, h3, h4, header .menu {
+  font-family: 'Signika', sans-serif;
+}
+
+h1 {
+  font-size: 1.4rem;
+}
+
+h2 {
+  font-size: 1.2rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+}
+
+h4 {
+  font-size: 1.0rem;
+}
+
+.site-slogan { font-family: 'Signika', sans-serif; font-size: 1.0rem; color: $toolbar-back; padding-bottom: 0.1rem; }
+
+body.path-frontpage #block-views-block-homepage-slideshow-block-1 { border-bottom: 0px solid $toolbar-back; }
+body:not(.path-frontpage) #page-head {
+  background-image: url("../images/Logo-Baum-Stuehle.png");
+  background-position: -0px bottom;
+  background-size: auto 0rem;
+  background-repeat: no-repeat;
+  margin-bottom: -0px;
+
+  &>* {
+    display: block;
+    padding: 0.5rem 0;
+    margin: auto;
+    text-align: center;
+  }
+  img { width: 10rem; height: auto; margin: auto; display: block; }
+}
+
+//slideshow
+#block-views-block-homepage-slideshow-block-1 { background-color: $toolbar-back; }
+
+header .homepage-slideshow-view div { position: relative; @include display-flex(); }
+header .homepage-slideshow-view div div { @include flex(1, 0, 100%); max-width: 100%; }
+header .homepage-slideshow-view div img { width: 100%; height: 100%; display: block;
+  opacity: 0;
+  transition: opacity ease 2s;
+  /*box-shadow: 3px 3px 5px -2px;*/
+}
+header .views-element-container .views-row div::after { content: ' '; display: block; clear: both; }
+header .views-element-container .views-row img.visible { opacity: 1; }
+header {
+  .views-row:nth-child(1) {
+    margin-left: 0%;
+  }
+  .views-row:nth-child(2) {
+    margin-left: -100%;
+  }
+  .views-row:nth-child(3) {
+    margin-left: -100%;
+  }
+  .views-row:nth-child(4) {
+    margin-left: -100%;
+  }
+  .views-row:nth-child(5) {
+    margin-left: -100%;
+  }
+}
+//end slideshow
+
+
+
+//topnav
+.region-header {
+  background-color: #ffffff;
+
+}
+#block-mainnavigation {
+  border-top: $toolbar-border-width $toolbar-back solid;
+  border-bottom: $toolbar-border-width $toolbar-back solid;
+  padding-bottom: 0;
+  ul.menu {
+    padding: 0;
+    margin: 0 auto;
+    position: relative;
+    @include display-flex();
+    width: 100%;
+    text-align: center;
+
+    li {
+      padding: 0;
+      @include display-flex();
+      @include flex(1);
+    }
+    li a {
+      display: inline-block;
+      padding: 0.75rem 0;
+      border-bottom: 0px solid transparent;
+      color: #000;
+      font-size: 1rem;
+      width: 100%;
+      text-decoration: none;
+    }
+    li.menu-item--active-trail a, li a:hover {
+      background-color: $toolbar-back;
+      border-bottom: 0px solid $toolbar-front;
+      color: white;
+    }
+  }
+}
+
+//content
+.field-node--field-hero img { border: 1px solid black; width: 100%; height: auto; }
+
+main {
+  margin: 3rem auto;
+  .layout-content {
+    margin: 0 1rem;
+  }
+}
+
+article:not(.sticky), .views-frontpage .views-row {
+  border-top: $accent-border-width solid $footer-back;
+  margin-bottom: 1rem;
+}
+article:first-child,  .views-frontpage .views-row:first-child { border-top: none; } //not if its the first one
+
+article header h2 { font-size: 1.2rem; }
+article header h2 a {
+  color: $toolbar-back; text-decoration: none;
+  &:hover { text-decoration: underline; }
+}
+article {
+  a { color: $logo-green; }
+  header .meta { font-size: 0.7rem; text-align: right; }
+  .field-node--field-hero img { border: 1px solid black; width: 100%; height: auto; }
+  footer { text-align: right; margin-bottom: 1rem; .node-readmore a { text-decoration: none; color: $footer-back; }}
+  .node__content {
+    @include display-flex();
+    @include flex-direction(column);
+    //@include flex-wrap(nowrap);
+
+    .field-node--field-hero {
+      @include flex(1, 0, 100%);
+    }
+    .field-node--body {
+      @include flex(1, 0, 100%);
+    }
+    .field-node--field-bilderliste {
+      @include flex(1,1,100%);
+      img { border: 1px solid black; max-width: 220px; }
+    }
+  }
+}
+//system elements
+#block-useraccountmenu {
+  position: absolute;top: 3rem;
+  right: 1rem;
+  li { display: inline-block; }
+  a { padding: 0.2rem 1rem; background-color: #dddddd; color: #02b053; }
+
+}
+//node action menu
+main {
+  position: relative;
+  &> .layout-content > ul {
+    display: block; position: absolute; top: -2.5rem;
+    margin: 0; padding: 0;
+    li { display: inline-block; }
+    a { padding: 0.2rem 1rem; background-color: #dddddd; color: #02b053; }
+  }
+}
+
+
+/* FOOTER */
+body > div > footer > .region-footer {
+  @include display-flex();
+  @include flex-direction(column);
+  background-color: $footer-back; padding: 1rem 0; border-top: 4px solid $footer-back;
+  & > * {
+    @include flex(1, 1, auto);
+    & > * { margin: 1rem auto; padding: 0 1rem; }
+  }
+  .menu { list-style: none; }
+  .menu li { list-style: none; margin: 0; }
+  li, footer span { display: inline-block; padding: 0; }
+  * { color: white;}
+  #block-footeraddresse { border-style: solid; border-color: #dddddd; border-width: 1px 0px; }
+  p { margin: 0; }
+}
+
+
+@media screen and (min-device-width: 480px){
+  body:not(.front) #page-head {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media screen and (min-device-width: 640px) {
+  #block-mainnavigation ul.menu li a { font-size: 1.2rem; }
+  .site-slogan { font-size: 1.2rem; padding-bottom: 0.5rem; }
+  body:not(.path-frontpage) #page-head {
+    background-size: auto 6rem;
+    background-position-x: 1rem;
+    margin-bottom: -3px;
+    border-width: 0.5rem 1rem 0 1rem;
+    border-style: solid;
+    border-color: white;
+    max-width: 60rem;
+    &>* {
+      margin-left: 5rem;
+      padding: 0.5rem 0;
+    }
+    img { width: 12rem; height: auto; }
+  }
+}
+
+@media screen and (min-device-width: 1024px) {
+  .site-slogan { font-size: 1.4rem; padding-bottom: 0.5rem; }
+  body:not(.path-frontpage) #page-head {
+    background-size: auto 9rem;
+    background-position-x: 1rem;
+    margin-bottom: -4px;
+    &>* {
+      margin-left: 10rem;
+      padding: 1rem 0;
+    }
+    img { width: 15rem; height: auto; }
+  }
+  .site-slogan { padding-bottom: 1rem; }
+  body > div > footer > .region-footer {
+    @include flex-direction(row);
+    #block-footeraddresse { border-style: solid; border-color: #dddddd; border-width: 0px 1px; }
+  }
+
+  article .node__content {
+    @include flex-direction(row);
+    @include flex-wrap(wrap);
+
+    .field-node--field-hero {
+      @include flex(1, 0, 100%);
+    }
+    .field-node--body {
+      @include flex(1, 0, 75%);
+    }
+    .field-node--field-bilderliste {
+      @include flex(1, 1, 25%);
+      padding-left: 1rem;
+      img { width: 100%; height: auto; }
+    }
+  }
+}
+
+
+//@import url(http://fonts.googleapis.com/css?family=Oxygen:400,300|Signika:400);
+@import url(http://fonts.googleapis.com/css?family=Arimo:400,400italic,700,700italic|Oxygen:400,300,700|Signika:400,300,600,700|Istok+Web:400,400italic,700,700italic);
+
+test {
+  font-family: 'Arimo', sans-serif;
+  font-family: 'Oxygen', sans-serif;
+  font-family: 'Signika', sans-serif;
+  font-family: 'Istok Web', sans-serif;
+}
