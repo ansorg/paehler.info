@@ -63,10 +63,11 @@ body:not(.path-frontpage) #page-head {
 
 header .homepage-slideshow-view div {
   position: relative;
-  -webkit-display: flex;
+  display: -webkit-flex;
   display: flex; }
 
 header .homepage-slideshow-view div div {
+  -webkit-box-flex: 1;
   -webkit-flex: 1 0 100%;
   flex: 1 0 100%;
   max-width: 100%; }
@@ -109,14 +110,15 @@ header .views-row:nth-child(5) {
     padding: 0;
     margin: 0 auto;
     position: relative;
-    -webkit-display: flex;
+    display: -webkit-flex;
     display: flex;
     width: 100%;
     text-align: center; }
     #block-mainnavigation ul.menu li {
       padding: 0;
-      -webkit-display: flex;
+      display: -webkit-flex;
       display: flex;
+      -webkit-box-flex: 1;
       -webkit-flex: 1 0 auto;
       flex: 1 0 auto; }
     #block-mainnavigation ul.menu li a {
@@ -158,38 +160,37 @@ article header h2 a {
   article header h2 a:hover {
     text-decoration: underline; }
 
-article a {
-  color: #02b053; }
-article header .meta {
-  font-size: 0.7rem;
-  text-align: right; }
-article .field-node--field-hero img {
-  border: 1px solid black;
-  width: 100%;
-  height: auto; }
-article footer {
-  text-align: right;
-  margin-bottom: 1rem; }
-  article footer .node-readmore a {
-    text-decoration: none;
-    color: #fb9e6c; }
-article .node__content {
-  -webkit-display: flex;
-  display: flex;
-  -webkit-flex-direction: column;
-  flex-direction: column; }
-  article .node__content .field-node--field-hero {
-    -webkit-flex: 1 0 100%;
-    flex: 1 0 100%; }
-  article .node__content .field-node--body {
-    -webkit-flex: 1 0 100%;
-    flex: 1 0 100%; }
-  article .node__content .field-node--field-bilderliste {
-    -webkit-flex: 1 1 100%;
-    flex: 1 1 100%; }
-    article .node__content .field-node--field-bilderliste img {
-      border: 1px solid black;
-      max-width: 220px; }
+article {
+  /*  .node__content {
+      @include display-flex();
+      @include flex-direction(column);
+  
+      .field-node--field-hero {
+        @include flex(1, 0, 100%);
+      }
+      .field-node--body {
+        @include flex(1, 0, 100%);
+      }
+      .field-node--field-bilderliste {
+        @include flex(1,1,100%);
+        img { border: 1px solid black; max-width: 220px; }
+      }
+    }*/ }
+  article a {
+    color: #02b053; }
+  article header .meta {
+    font-size: 0.7rem;
+    text-align: right; }
+  article .field-node--field-hero img {
+    border: 1px solid black;
+    width: 100%;
+    height: auto; }
+  article footer {
+    text-align: right;
+    margin-bottom: 1rem; }
+    article footer .node-readmore a {
+      text-decoration: none;
+      color: #fb9e6c; }
 
 #block-useraccountmenu {
   position: absolute;
@@ -219,7 +220,7 @@ main {
 
 /* FOOTER */
 body > div > footer > .region-footer {
-  -webkit-display: flex;
+  display: -webkit-flex;
   display: flex;
   -webkit-flex-direction: column;
   flex-direction: column;
@@ -227,6 +228,7 @@ body > div > footer > .region-footer {
   padding: 1rem 0;
   border-top: 4px solid #fb9e6c; }
   body > div > footer > .region-footer > * {
+    -webkit-box-flex: 1;
     -webkit-flex: 1 1 auto;
     flex: 1 1 auto; }
     body > div > footer > .region-footer > * > * {
@@ -275,7 +277,7 @@ body > div > footer > .region-footer {
     body:not(.path-frontpage) #page-head img {
       width: 12rem;
       height: auto; } }
-@media screen and (min-device-width: 1024px) {
+@media screen and (min-device-width: 768px) {
   .site-slogan {
     font-size: 1.4rem;
     padding-bottom: 0.5rem; }
@@ -303,20 +305,28 @@ body > div > footer > .region-footer {
       border-width: 0px 1px; }
 
   article .node__content {
+    display: -webkit-flex;
+    display: flex;
     -webkit-flex-direction: row;
     flex-direction: row;
     -webkit-flex-flow: row wrap;
     -webkit-flex-wrap: wrap;
     flex-wrap: wrap; }
     article .node__content .field-node--field-hero {
+      -webkit-box-flex: 1;
       -webkit-flex: 1 0 100%;
       flex: 1 0 100%; }
     article .node__content .field-node--body {
+      -webkit-box-flex: 1;
       -webkit-flex: 1 0 75%;
-      flex: 1 0 75%; }
+      flex: 1 0 75%;
+      min-width: 75%;
+      max-width: 100%; }
     article .node__content .field-node--field-bilderliste {
+      -webkit-box-flex: 1;
       -webkit-flex: 1 1 25%;
       flex: 1 1 25%;
+      max-width: 25%;
       padding-left: 1rem; }
       article .node__content .field-node--field-bilderliste img {
         width: 100%;

@@ -13,7 +13,7 @@ $footer-back: lighten($logo-orange, 9);
 // http://the-echoplex.net/flexyboxes/
 
 @mixin display-flex {
-  display: -webkit-box;
+  //display: -webkit-box;
   display: -webkit-flex;
   display: flex;
 }
@@ -29,10 +29,10 @@ $footer-back: lighten($logo-orange, 9);
   flex-direction: $dir;
 }
 
-@mixin flex-wrap($mode:nowrap) {
+@mixin flex-wrap() {
   -webkit-flex-flow: row wrap;
-  -webkit-flex-wrap: $mode;
-  flex-wrap: $mode;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 @mixin flex-justify($mode:initial) {
@@ -195,10 +195,9 @@ article {
   header .meta { font-size: 0.7rem; text-align: right; }
   .field-node--field-hero img { border: 1px solid black; width: 100%; height: auto; }
   footer { text-align: right; margin-bottom: 1rem; .node-readmore a { text-decoration: none; color: $footer-back; }}
-  .node__content {
+/*  .node__content {
     @include display-flex();
     @include flex-direction(column);
-    //@include flex-wrap(nowrap);
 
     .field-node--field-hero {
       @include flex(1, 0, 100%);
@@ -210,7 +209,7 @@ article {
       @include flex(1,1,100%);
       img { border: 1px solid black; max-width: 220px; }
     }
-  }
+  }*/
 }
 //system elements
 #block-useraccountmenu {
@@ -276,7 +275,7 @@ body > div > footer > .region-footer {
   }
 }
 
-@media screen and (min-device-width: 1024px) {
+@media screen and (min-device-width: 768px) {
   .site-slogan { font-size: 1.4rem; padding-bottom: 0.5rem; }
   body:not(.path-frontpage) #page-head {
     background-size: auto 9rem;
@@ -295,17 +294,21 @@ body > div > footer > .region-footer {
   }
 
   article .node__content {
+    @include display-flex();
     @include flex-direction(row);
-    @include flex-wrap(wrap);
+    @include flex-wrap();
 
     .field-node--field-hero {
       @include flex(1, 0, 100%);
     }
     .field-node--body {
       @include flex(1, 0, 75%);
+      min-width: 75%;
+      max-width: 100%;
     }
     .field-node--field-bilderliste {
       @include flex(1, 1, 25%);
+      max-width: 25%;
       padding-left: 1rem;
       img { width: 100%; height: auto; }
     }
