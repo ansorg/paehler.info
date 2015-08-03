@@ -9,12 +9,17 @@ $accent-border-width: 1px;
 
 $footer-back: lighten($logo-orange, 9);
 
+//see https://css-tricks.com/using-flexbox/ 
+// http://the-echoplex.net/flexyboxes/
+
 @mixin display-flex {
-  -webkit-display: flex;
+  display: -webkit-box;
+  display: -webkit-flex;
   display: flex;
 }
 
 @mixin flex($grow:1, $shrink:0, $min:auto) {
+  -webkit-box-flex: $grow;
   -webkit-flex: $grow $shrink $min;
   flex: $grow $shrink $min;
 }
