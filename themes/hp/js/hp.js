@@ -24,6 +24,7 @@ hp.slideshow = (function () {
                 }
                 if (i === activeImage) {
                     images[i].classList.add(cVisible);
+                    images[i].parentNode.classList.remove('visually-hidden');
                 } else {
                     images[i].classList.remove(cVisible);
                 }
