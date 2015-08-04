@@ -251,13 +251,18 @@ article {
   a {
     color: $logo-green;
   }
+  .field-node--body p:first-child {
+    margin-top: 0;
+  }
+
   header .meta {
     font-size: 0.7rem;
     text-align: right;
   }
   footer {
     text-align: right;
-    margin-bottom: 1rem;
+    margin-bottom: 0rem;
+    font-size: 0.9rem;
     color: $secondary-font-color;
     .node-readmore a {
       text-decoration: none;
@@ -359,13 +364,20 @@ body > div > footer {
       @include flex-direction(row);
 
       .field-node--field-hero {
+        @include flex(1, 0, 110px);
+        max-width: 110px;
         margin-right: 1rem;
 
         img {
           border: 1px solid black;
+          display: block;
           height: auto;
           width: 110px;
         }
+      }
+      .field-node--body {
+        @include flex(1, 1, auto);
+        min-width: 320px;
       }
     }
   }
@@ -382,6 +394,8 @@ body > div > footer {
   body.path-frontpage {
     .node__content {
       .field-node--field-hero {
+        @include flex(1, 0, 166px);
+        max-width: 166px;
         img {
           width: 166px;
         }
@@ -432,6 +446,8 @@ body > div > footer {
   body.path-frontpage {
     .node__content {
       .field-node--field-hero {
+        @include flex(1, 0, 220px);
+        max-width: 220px;
         img {
           width: 220px;
         }

@@ -162,12 +162,15 @@ article header h2 a {
 
 article a {
   color: #02b053; }
+article .field-node--body p:first-child {
+  margin-top: 0; }
 article header .meta {
   font-size: 0.7rem;
   text-align: right; }
 article footer {
   text-align: right;
-  margin-bottom: 1rem;
+  margin-bottom: 0rem;
+  font-size: 0.9rem;
   color: #555555; }
   article footer .node-readmore a {
     text-decoration: none;
@@ -246,11 +249,21 @@ body > div > footer {
     -webkit-flex-direction: row;
     flex-direction: row; }
     body.path-frontpage .node__content .field-node--field-hero {
+      -webkit-box-flex: 1;
+      -webkit-flex: 1 0 110px;
+      flex: 1 0 110px;
+      max-width: 110px;
       margin-right: 1rem; }
       body.path-frontpage .node__content .field-node--field-hero img {
         border: 1px solid black;
+        display: block;
         height: auto;
-        width: 110px; } }
+        width: 110px; }
+    body.path-frontpage .node__content .field-node--body {
+      -webkit-box-flex: 1;
+      -webkit-flex: 1 1 auto;
+      flex: 1 1 auto;
+      min-width: 320px; } }
 @media screen and (min-width: 640px) {
   #block-mainnavigation ul.menu li a {
     font-size: 1.2rem; }
@@ -259,8 +272,13 @@ body > div > footer {
     font-size: 1.2rem;
     padding-bottom: 0.5rem; }
 
-  body.path-frontpage .node__content .field-node--field-hero img {
-    width: 166px; }
+  body.path-frontpage .node__content .field-node--field-hero {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 0 166px;
+    flex: 1 0 166px;
+    max-width: 166px; }
+    body.path-frontpage .node__content .field-node--field-hero img {
+      width: 166px; }
 
   body:not(.path-frontpage) #page-head {
     background-size: auto 6rem;
@@ -295,8 +313,13 @@ body > div > footer {
   .site-slogan {
     padding-bottom: 1rem; }
 
-  body.path-frontpage .node__content .field-node--field-hero img {
-    width: 220px; }
+  body.path-frontpage .node__content .field-node--field-hero {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 0 220px;
+    flex: 1 0 220px;
+    max-width: 220px; }
+    body.path-frontpage .node__content .field-node--field-hero img {
+      width: 220px; }
 
   body > div > footer > .region-footer {
     -webkit-flex-direction: row;
