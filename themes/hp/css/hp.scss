@@ -351,6 +351,38 @@ body > div > footer {
   }
 }
 
+//slidebox
+#slidebox {
+  position: fixed;
+  top: 0; left: 0; right: 0; height: 100%;
+  background-color: rgba(0,0,0,0.7);
+  display: none;
+  &.open {
+    display: block;
+    @include display-flex;
+    cursor: zoom-out;
+  }
+
+  div {
+    left: 0;
+    right: 0;
+    margin-top: -25%;
+    top: 45%;
+    position: absolute;
+  }
+
+  img {
+    display: block;
+    margin: auto;
+    width: auto;
+    height: auto;
+    max-width: 90%;
+    border: 5px solid white;
+    box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.7);
+  }
+}
+
+
 @media screen and (min-width: 480px) {
   body:not(.path-frontpage) {
     #page-head {

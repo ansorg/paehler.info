@@ -6,3 +6,4 @@ global-styling:
       css/print.css: { media: print }
   js:
       js/hp.js: {}
+      js/fastclick.js: {}
