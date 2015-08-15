@@ -3,7 +3,11 @@ global-styling:
   css:
     theme:
       css/hp.css: {}
+      css/flex.css: {}
       css/print.css: { media: print }
   js:
-      js/hp.js: {}
-      js/fastclick.js: {}
+    js/modernizr-3.0.0-alpha.3.js: {}
+    js/hp.js: {}
+    js/fastclick.js: {}
+  #dependencies:
+  #  - core/modernizr

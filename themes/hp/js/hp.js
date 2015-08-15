@@ -6,6 +6,9 @@ hp.slideshow = (function () {
     var me = this;
 
     me.init = function () {
+        if (!document.documentElement || document.documentElement.className.indexOf("flexbox") < 0) {
+            return;
+        }
 
         var slider = document.querySelector('.homepage-slideshow-view > div');
         if (slider === null) return; //not the homepage, no slideshow
@@ -81,10 +84,10 @@ hp.gallery = function (me) {
     return me;
 }(hp);
 
-window.addEventListener('load', hp.slideshow.init);
-window.addEventListener('load', hp.gallery.init);
-
 if ('addEventListener' in document) {
+    window.addEventListener('load', hp.slideshow.init);
+    window.addEventListener('load', hp.gallery.init);
+
     document.addEventListener('DOMContentLoaded', function() {
         FastClick.attach(document.body);
     }, false);

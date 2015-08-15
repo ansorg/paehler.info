@@ -14,40 +14,14 @@ $secondary-font-color: #555555;
 //see https://css-tricks.com/using-flexbox/ 
 // http://the-echoplex.net/flexyboxes/
 
-@mixin display-flex {
-  //display: -webkit-box;
-  display: -webkit-flex;
-  display: flex;
-}
-
-@mixin flex($grow:1, $shrink:0, $min:auto) {
-  -webkit-box-flex: $grow;
-  -webkit-flex: $grow $shrink $min;
-  flex: $grow $shrink $min;
-}
-
-@mixin flex-direction($dir:row) {
-  -webkit-flex-direction: $dir;
-  flex-direction: $dir;
-}
-
-@mixin flex-wrap() {
-  -webkit-flex-flow: row wrap;
-  -webkit-flex-wrap: wrap;
-  flex-wrap: wrap;
-}
-
-@mixin flex-justify($mode:initial) {
-  -webkit-justify-content: $mode;
-  justify-content: $mode;
-}
-
 html, body, div, p, header, footer, main, nav, ul, li, a, span, img {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
 header, main, footer {
   display: block;
+  img { border: none; }
 }
 
 body {
@@ -124,11 +98,9 @@ body:not(.path-frontpage) #page-head {
 
 header .homepage-slideshow-view div {
   position: relative;
-  @include display-flex();
 }
 
 header .homepage-slideshow-view div div {
-  @include flex(1, 0, 100%);
   max-width: 100%;
 }
 
@@ -137,6 +109,7 @@ header .homepage-slideshow-view div img {
   height: 100%;
   display: block;
   opacity: 0;
+  -webkit-transition: opacity ease 2s;
   transition: opacity ease 2s;
   /*box-shadow: 3px 3px 5px -2px;*/
 }
@@ -184,18 +157,16 @@ header {
     padding: 0;
     margin: 0 auto;
     position: relative;
-    @include display-flex();
     width: 100%;
     text-align: center;
 
     li {
-      padding: 0;
-      @include display-flex();
-      @include flex(1);
-    }
-    li a {
       display: inline-block;
-      padding: 0.75rem 0;
+      padding: 0;
+    }
+    a {
+      display: inline-block;
+      padding: 0.75rem 1rem;
       border-bottom: 0px solid transparent;
       color: #000;
       font-size: 1rem;
@@ -315,12 +286,9 @@ body > div > footer {
   border-top: $toolbar-border-width solid $footer-back;
 
   & > .region-footer {
-    @include display-flex();
-    @include flex-direction(column);
     //background-color: $footer-back;
     padding: 1rem 0;
     & > * {
-      @include flex(1, 1, auto);
       & > * {
         margin: 1rem auto;
         padding: 0 1rem;
@@ -359,7 +327,6 @@ body > div > footer {
   display: none;
   &.open {
     display: block;
-    @include display-flex;
     cursor: zoom-out;
   }
 
@@ -392,12 +359,9 @@ body > div > footer {
   }
   body.path-frontpage {
     .node__content {
-      @include display-flex();
-      @include flex-direction(row);
 
       .field-node--field-hero {
-        @include flex(1, 0, 110px);
-        max-width: 110px;
+        //max-width: 110px;
         margin-right: 1rem;
 
         img {
@@ -408,8 +372,7 @@ body > div > footer {
         }
       }
       .field-node--body {
-        @include flex(1, 1, auto);
-        min-width: 320px;
+        //min-width: 320px;
       }
     }
   }
@@ -426,8 +389,7 @@ body > div > footer {
   body.path-frontpage {
     .node__content {
       .field-node--field-hero {
-        @include flex(1, 0, 166px);
-        max-width: 166px;
+        //max-width: 166px;
         img {
           width: 166px;
         }
@@ -478,8 +440,6 @@ body > div > footer {
   body.path-frontpage {
     .node__content {
       .field-node--field-hero {
-        @include flex(1, 0, 220px);
-        max-width: 220px;
         img {
           width: 220px;
         }
@@ -487,7 +447,6 @@ body > div > footer {
     }
   }
   body > div > footer > .region-footer {
-    @include flex-direction(row);
     #block-footeraddresse {
       border-style: solid;
       border-color: $secondary-font-color;
@@ -496,20 +455,15 @@ body > div > footer {
   }
 
   body:not(.path-frontpage) article .node__content {
-    @include display-flex();
-    @include flex-direction(row);
-    @include flex-wrap();
 
     .field-node--field-hero {
-      @include flex(1, 0, 100%);
+      //@include flex(1, 0, 100%);
     }
     .field-node--body {
-      @include flex(1, 0, 75%);
       min-width: 75%;
       max-width: 100%;
     }
     .field-node--field-bilderliste {
-      @include flex(1, 1, 25%);
       max-width: 25%;
       padding-left: 1rem;
       img {

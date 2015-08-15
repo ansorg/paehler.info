@@ -1,9 +1,12 @@
 @import url(http://fonts.googleapis.com/css?family=Arimo:400,400italic,700,700italic|Oxygen:400,300,700|Signika:400,300,600,700|Istok+Web:400,400italic,700,700italic);
 html, body, div, p, header, footer, main, nav, ul, li, a, span, img {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
 header, main, footer {
   display: block; }
+  header img, main img, footer img {
+    border: none; }
 
 body {
   font-family: 'Oxygen', sans-serif;
@@ -62,14 +65,9 @@ body:not(.path-frontpage) #page-head {
   background-color: #02b053; }
 
 header .homepage-slideshow-view div {
-  position: relative;
-  display: -webkit-flex;
-  display: flex; }
+  position: relative; }
 
 header .homepage-slideshow-view div div {
-  -webkit-box-flex: 1;
-  -webkit-flex: 1 0 100%;
-  flex: 1 0 100%;
   max-width: 100%; }
 
 header .homepage-slideshow-view div img {
@@ -77,6 +75,7 @@ header .homepage-slideshow-view div img {
   height: 100%;
   display: block;
   opacity: 0;
+  -webkit-transition: opacity ease 2s;
   transition: opacity ease 2s;
   /*box-shadow: 3px 3px 5px -2px;*/ }
 
@@ -110,20 +109,14 @@ header .views-row:nth-child(5) {
     padding: 0;
     margin: 0 auto;
     position: relative;
-    display: -webkit-flex;
-    display: flex;
     width: 100%;
     text-align: center; }
     #block-mainnavigation ul.menu li {
-      padding: 0;
-      display: -webkit-flex;
-      display: flex;
-      -webkit-box-flex: 1;
-      -webkit-flex: 1 0 auto;
-      flex: 1 0 auto; }
-    #block-mainnavigation ul.menu li a {
       display: inline-block;
-      padding: 0.75rem 0;
+      padding: 0; }
+    #block-mainnavigation ul.menu a {
+      display: inline-block;
+      padding: 0.75rem 1rem;
       border-bottom: 0px solid transparent;
       color: #000;
       font-size: 1rem;
@@ -209,18 +202,10 @@ main {
 body > div > footer {
   border-top: 2px solid #fb9e6c; }
   body > div > footer > .region-footer {
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: column;
-    flex-direction: column;
     padding: 1rem 0; }
-    body > div > footer > .region-footer > * {
-      -webkit-box-flex: 1;
-      -webkit-flex: 1 1 auto;
-      flex: 1 1 auto; }
-      body > div > footer > .region-footer > * > * {
-        margin: 1rem auto;
-        padding: 0 1rem; }
+    body > div > footer > .region-footer > * > * {
+      margin: 1rem auto;
+      padding: 0 1rem; }
     body > div > footer > .region-footer .menu {
       list-style: none; }
     body > div > footer > .region-footer .menu li {
@@ -248,8 +233,6 @@ body > div > footer {
   display: none; }
   #slidebox.open {
     display: block;
-    display: -webkit-flex;
-    display: flex;
     cursor: zoom-out; }
   #slidebox div {
     left: 0;
@@ -271,27 +254,13 @@ body > div > footer {
     margin-left: auto;
     margin-right: auto; }
 
-  body.path-frontpage .node__content {
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: row;
-    flex-direction: row; }
-    body.path-frontpage .node__content .field-node--field-hero {
-      -webkit-box-flex: 1;
-      -webkit-flex: 1 0 110px;
-      flex: 1 0 110px;
-      max-width: 110px;
-      margin-right: 1rem; }
-      body.path-frontpage .node__content .field-node--field-hero img {
-        border: 1px solid black;
-        display: block;
-        height: auto;
-        width: 110px; }
-    body.path-frontpage .node__content .field-node--body {
-      -webkit-box-flex: 1;
-      -webkit-flex: 1 1 auto;
-      flex: 1 1 auto;
-      min-width: 320px; } }
+  body.path-frontpage .node__content .field-node--field-hero {
+    margin-right: 1rem; }
+    body.path-frontpage .node__content .field-node--field-hero img {
+      border: 1px solid black;
+      display: block;
+      height: auto;
+      width: 110px; } }
 @media screen and (min-width: 640px) {
   #block-mainnavigation ul.menu li a {
     font-size: 1.2rem; }
@@ -300,13 +269,8 @@ body > div > footer {
     font-size: 1.2rem;
     padding-bottom: 0.5rem; }
 
-  body.path-frontpage .node__content .field-node--field-hero {
-    -webkit-box-flex: 1;
-    -webkit-flex: 1 0 166px;
-    flex: 1 0 166px;
-    max-width: 166px; }
-    body.path-frontpage .node__content .field-node--field-hero img {
-      width: 166px; }
+  body.path-frontpage .node__content .field-node--field-hero img {
+    width: 166px; }
 
   body:not(.path-frontpage) #page-head {
     background-size: auto 6rem;
@@ -341,49 +305,23 @@ body > div > footer {
   .site-slogan {
     padding-bottom: 1rem; }
 
-  body.path-frontpage .node__content .field-node--field-hero {
-    -webkit-box-flex: 1;
-    -webkit-flex: 1 0 220px;
-    flex: 1 0 220px;
-    max-width: 220px; }
-    body.path-frontpage .node__content .field-node--field-hero img {
-      width: 220px; }
+  body.path-frontpage .node__content .field-node--field-hero img {
+    width: 220px; }
 
-  body > div > footer > .region-footer {
-    -webkit-flex-direction: row;
-    flex-direction: row; }
-    body > div > footer > .region-footer #block-footeraddresse {
-      border-style: solid;
-      border-color: #555555;
-      border-width: 0px 1px; }
+  body > div > footer > .region-footer #block-footeraddresse {
+    border-style: solid;
+    border-color: #555555;
+    border-width: 0px 1px; }
 
-  body:not(.path-frontpage) article .node__content {
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: row;
-    flex-direction: row;
-    -webkit-flex-flow: row wrap;
-    -webkit-flex-wrap: wrap;
-    flex-wrap: wrap; }
-    body:not(.path-frontpage) article .node__content .field-node--field-hero {
-      -webkit-box-flex: 1;
-      -webkit-flex: 1 0 100%;
-      flex: 1 0 100%; }
-    body:not(.path-frontpage) article .node__content .field-node--body {
-      -webkit-box-flex: 1;
-      -webkit-flex: 1 0 75%;
-      flex: 1 0 75%;
-      min-width: 75%;
-      max-width: 100%; }
-    body:not(.path-frontpage) article .node__content .field-node--field-bilderliste {
-      -webkit-box-flex: 1;
-      -webkit-flex: 1 1 25%;
-      flex: 1 1 25%;
-      max-width: 25%;
-      padding-left: 1rem; }
-      body:not(.path-frontpage) article .node__content .field-node--field-bilderliste img {
-        width: 100%;
-        height: auto; } }
+  body:not(.path-frontpage) article .node__content .field-node--body {
+    min-width: 75%;
+    max-width: 100%; }
+  body:not(.path-frontpage) article .node__content .field-node--field-bilderliste {
+    max-width: 25%;
+    padding-left: 1rem; }
+    body:not(.path-frontpage) article .node__content .field-node--field-bilderliste img {
+      width: 100%;
+      height: auto; } }
 @media screen and (min-width: 1024px) {
   .site-slogan {
     font-size: 1.6rem; } }

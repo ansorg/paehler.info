@@ -1,0 +1,132 @@
+//add modern styling if browser support is recognized by modernizr
+
+@mixin display-flex {
+  //display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin flex($grow:1, $shrink:0, $min:auto) {
+  -webkit-box-flex: $grow;
+  -webkit-flex: $grow $shrink $min;
+  flex: $grow $shrink $min;
+}
+
+@mixin flex-direction($dir:row) {
+  -webkit-flex-direction: $dir;
+  flex-direction: $dir;
+}
+
+@mixin flex-wrap() {
+  -webkit-flex-flow: row wrap;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+@mixin flex-justify($mode:initial) {
+  -webkit-justify-content: $mode;
+  justify-content: $mode;
+}
+
+html.flexbox {
+  header .homepage-slideshow-view div {
+    position: relative;
+    @include display-flex();
+  }
+  header .homepage-slideshow-view div div {
+    @include flex(1, 0, 100%);
+    max-width: 100%;
+  }
+  #block-mainnavigation {
+    ul.menu {
+      @include display-flex();
+      li {
+        padding: 0;
+        @include display-flex();
+        @include flex(1);
+      }
+      a {
+        //padding: 0.75rem 1rem;
+      }
+    }
+  }
+
+  body > div > footer {
+    & > .region-footer {
+      @include display-flex();
+      @include flex-direction(column);
+      & > * {
+        @include flex(1, 1, auto);
+      }
+    }
+  }
+
+  #slidebox {
+    &.open {
+      display: block;
+      @include display-flex;
+    }
+
+  }
+
+  @media screen and (min-width: 480px) {
+    body.path-frontpage {
+      .node__content {
+        @include display-flex();
+        @include flex-direction(row);
+
+        .field-node--field-hero {
+          //@include flex(1, 0, 110px);
+        }
+        .field-node--body {
+          //@include flex(0, 1, auto);
+        }
+      }
+    }
+
+  }
+
+  @media screen and (min-width: 640px) {
+    body.path-frontpage {
+      .node__content {
+        .field-node--field-hero {
+          //@include flex(1, 0, 166px);
+        }
+        .field-node--body {
+          //@include flex(0, 1, 33rem);
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    body.path-frontpage {
+      .node__content {
+        .field-node--field-hero {
+          //@include flex(1, 0, 220px);
+        }
+        .field-node--body {
+          //@include flex(0, 1, 43rem);
+        }
+      }
+    }
+    body > div > footer > .region-footer {
+      @include flex-direction(row);
+    }
+    body:not(.path-frontpage) article .node__content {
+      @include display-flex();
+      @include flex-direction(row);
+      @include flex-wrap();
+      .field-node--field-hero {
+        @include flex(1, 0, 100%);
+      }
+      .field-node--body {
+        @include flex(1, 0, 75%);
+      }
+      .field-node--field-bilderliste {
+        @include flex(1, 1, 25%);
+      }
+    }
+
+  }
+}
