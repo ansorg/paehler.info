@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Arimo:400,400italic,700,700italic|Oxygen:400,300,700|Signika:400,300,600,700|Istok+Web:400,400italic,700,700italic);
+@import url(http://fonts.googleapis.com/css?family=Oxygen:400,300|Droid+Serif:400);
 html, body, div, p, header, footer, main, nav, ul, li, a, span, img {
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
@@ -20,8 +20,11 @@ body {
   max-width: 60rem;
   margin: 0 auto; }
 
-h1, h2, h3, h4, header .menu {
-  font-family: 'Signika', sans-serif; }
+header .menu {
+  font-family: 'Oxygen', sans-serif; }
+
+h1, h2, h3, h4 {
+  font-family: 'Droid Serif', sans-serif; }
 
 h1 {
   font-size: 1.4rem; }
@@ -79,12 +82,12 @@ header .homepage-slideshow-view div img {
   transition: opacity ease 2s;
   /*box-shadow: 3px 3px 5px -2px;*/ }
 
-header .views-element-container .views-row div::after {
+header .homepage-slideshow-view .views-row div::after {
   content: ' ';
   display: block;
   clear: both; }
 
-header .views-element-container .views-row img.visible {
+header .homepage-slideshow-view .views-row img.visible {
   opacity: 1; }
 
 header .views-row:nth-child(1) {
@@ -116,7 +119,7 @@ header .views-row:nth-child(5) {
       padding: 0; }
     #block-mainnavigation ul.menu a {
       display: inline-block;
-      padding: 0.75rem 1rem;
+      padding: 0.75rem 0.25rem;
       border-bottom: 0px solid transparent;
       color: #000;
       font-size: 1rem;
@@ -127,7 +130,7 @@ header .views-row:nth-child(5) {
       border-bottom: 0px solid #fa813f;
       color: white; }
 
-.field-node--field-hero img, .field-node--field-bilderliste img {
+.field--name-field-hero img, .field--name-field-bilderliste img {
   border: 1px solid black;
   width: 100%;
   height: auto; }
@@ -155,7 +158,7 @@ article header h2 a {
 
 article a {
   color: #02b053; }
-article .field-node--body p:first-child {
+article .field--name-body p:first-child {
   margin-top: 0; }
 article header .meta {
   font-size: 0.7rem;
@@ -168,6 +171,9 @@ article footer {
   article footer .node-readmore a {
     text-decoration: none;
     color: #fb9e6c; }
+article .node__links {
+  text-align: right;
+  font-size: 0.9rem; }
 
 #block-useraccountmenu {
   position: absolute;
@@ -183,45 +189,54 @@ article footer {
 ul.inline li {
   padding: 0 1rem 0 0; }
 
-main {
-  position: relative; }
-  main > .layout-content > ul {
-    display: block;
-    position: absolute;
-    top: -2.5rem;
-    margin: 0;
-    padding: 0; }
-    main > .layout-content > ul li {
-      display: inline-block; }
-    main > .layout-content > ul a {
-      padding: 0.2rem 1rem;
-      background-color: #dddddd;
-      color: #02b053; }
+.region-pre-content nav a {
+  padding: 0.2rem 1rem;
+  background-color: #dddddd;
+  color: #02b053; }
 
 /* FOOTER */
 body > div > footer {
-  border-top: 2px solid #fb9e6c; }
+  border-top: 2px solid #fb9e6c;
+  font-size: 0.9rem; }
   body > div > footer > .region-footer {
     padding: 1rem 0; }
-    body > div > footer > .region-footer > * > * {
-      margin: 1rem auto;
-      padding: 0 1rem; }
+    body > div > footer > .region-footer > * {
+      padding: 1rem 0; }
+      body > div > footer > .region-footer > * > * {
+        margin: 0rem auto;
+        padding: 0 1rem; }
     body > div > footer > .region-footer .menu {
       list-style: none; }
     body > div > footer > .region-footer .menu li {
       list-style: none;
+      display: inline-block;
       margin: 0; }
+      body > div > footer > .region-footer .menu li a {
+        padding: 0 1rem 0 0; }
     body > div > footer > .region-footer li, body > div > footer > .region-footer footer span {
       display: block;
       padding: 0; }
     body > div > footer > .region-footer * {
       color: #555555; }
-    body > div > footer > .region-footer #block-footeraddresse {
-      border-style: solid;
-      border-color: #fb9e6c;
-      border-width: 1px 0px; }
     body > div > footer > .region-footer p {
       margin: 0; }
+
+#block-footeraddresse {
+  border-style: solid;
+  border-color: #fb9e6c;
+  border-width: 1px 0px; }
+
+#block-poweredbydrupal span {
+  display: block;
+  margin: 0 0 0 auto; }
+  #block-poweredbydrupal span a {
+    background-image: url("https://www.drupal.org/files/drupal%208%20logo%20inline%20CMYK%2072.png");
+    background-repeat: no-repeat;
+    color: transparent;
+    background-size: contain;
+    min-width: 90px;
+    display: inline-block;
+    margin-left: 1ex; }
 
 #slidebox {
   position: fixed;
@@ -254,9 +269,9 @@ body > div > footer {
     margin-left: auto;
     margin-right: auto; }
 
-  body.path-frontpage .node__content .field-node--field-hero {
+  body.path-frontpage .node__content .field--name-field-hero {
     margin-right: 1rem; }
-    body.path-frontpage .node__content .field-node--field-hero img {
+    body.path-frontpage .node__content .field--name-field-hero img {
       border: 1px solid black;
       display: block;
       height: auto;
@@ -269,7 +284,7 @@ body > div > footer {
     font-size: 1.2rem;
     padding-bottom: 0.5rem; }
 
-  body.path-frontpage .node__content .field-node--field-hero img {
+  body.path-frontpage .node__content .field--name-field-hero img {
     width: 166px; }
 
   body:not(.path-frontpage) #page-head {
@@ -305,30 +320,34 @@ body > div > footer {
   .site-slogan {
     padding-bottom: 1rem; }
 
-  body.path-frontpage .node__content .field-node--field-hero img {
+  body.path-frontpage .node__content .field--name-field-hero img {
     width: 220px; }
 
+  body > div > footer > .region-footer .menu li {
+    display: block; }
   body > div > footer > .region-footer #block-footeraddresse {
     border-style: solid;
-    border-color: #555555;
     border-width: 0px 1px; }
 
-  body:not(.path-frontpage) article .node__content .field-node--body {
+  body:not(.path-frontpage) article .node__content .field--name-body {
     min-width: 75%;
     max-width: 100%; }
-  body:not(.path-frontpage) article .node__content .field-node--field-bilderliste {
+  body:not(.path-frontpage) article .node__content .field--name-field-bilderliste.field__items {
     max-width: 25%;
     padding-left: 1rem; }
-    body:not(.path-frontpage) article .node__content .field-node--field-bilderliste img {
+    body:not(.path-frontpage) article .node__content .field--name-field-bilderliste.field__items img {
       width: 100%;
       height: auto; } }
 @media screen and (min-width: 1024px) {
   .site-slogan {
     font-size: 1.6rem; } }
+/*
 test {
   font-family: 'Arimo', sans-serif;
   font-family: 'Oxygen', sans-serif;
   font-family: 'Signika', sans-serif;
-  font-family: 'Istok Web', sans-serif; }
+  font-family: 'Istok Web', sans-serif;
+}
+*/
 
 /*# sourceMappingURL=hp.css.map */

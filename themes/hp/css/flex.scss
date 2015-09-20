@@ -69,16 +69,22 @@ html.flexbox {
 
   }
 
+  #block-poweredbydrupal {
+    @include display-flex;
+    @include flex-direction(column);
+    @include flex-justify(flex-end);
+  }
+
   @media screen and (min-width: 480px) {
     body.path-frontpage {
       .node__content {
         @include display-flex();
         @include flex-direction(row);
 
-        .field-node--field-hero {
+        .field--name-field-hero {
           //@include flex(1, 0, 110px);
         }
-        .field-node--body {
+        .field--name-body {
           //@include flex(0, 1, auto);
         }
       }
@@ -89,10 +95,10 @@ html.flexbox {
   @media screen and (min-width: 640px) {
     body.path-frontpage {
       .node__content {
-        .field-node--field-hero {
+        .field--name-field-hero {
           //@include flex(1, 0, 166px);
         }
-        .field-node--body {
+        .field--name-body {
           //@include flex(0, 1, 33rem);
         }
       }
@@ -102,10 +108,10 @@ html.flexbox {
   @media screen and (min-width: 768px) {
     body.path-frontpage {
       .node__content {
-        .field-node--field-hero {
+        .field--name-field-hero {
           //@include flex(1, 0, 220px);
         }
-        .field-node--body {
+        .field--name-body {
           //@include flex(0, 1, 43rem);
         }
       }
@@ -117,13 +123,13 @@ html.flexbox {
       @include display-flex();
       @include flex-direction(row);
       @include flex-wrap();
-      .field-node--field-hero {
+      .field--name-field-hero {
         @include flex(1, 0, 100%);
       }
-      .field-node--body {
+      .field--name-body {
         @include flex(1, 0, 75%);
       }
-      .field-node--field-bilderliste {
+      .field--name-field-bilderliste.field__items {
         @include flex(1, 1, 25%);
       }
     }

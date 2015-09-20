@@ -10,6 +10,7 @@ $accent-border-width: 1px;
 $footer-back: lighten($logo-orange, 9);
 
 $secondary-font-color: #555555;
+$font-size-small: 0.9rem;
 
 //see https://css-tricks.com/using-flexbox/ 
 // http://the-echoplex.net/flexyboxes/
@@ -21,7 +22,9 @@ html, body, div, p, header, footer, main, nav, ul, li, a, span, img {
 
 header, main, footer {
   display: block;
-  img { border: none; }
+  img {
+    border: none;
+  }
 }
 
 body {
@@ -39,8 +42,12 @@ body {
   margin: 0 auto;
 }
 
-h1, h2, h3, h4, header .menu {
-  font-family: 'Signika', sans-serif;
+header .menu {
+  font-family: 'Oxygen', sans-serif;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Droid Serif', sans-serif;
 }
 
 h1 {
@@ -114,13 +121,13 @@ header .homepage-slideshow-view div img {
   /*box-shadow: 3px 3px 5px -2px;*/
 }
 
-header .views-element-container .views-row div::after {
+header .homepage-slideshow-view .views-row div::after {
   content: ' ';
   display: block;
   clear: both;
 }
 
-header .views-element-container .views-row img.visible {
+header .homepage-slideshow-view .views-row img.visible {
   opacity: 1;
 }
 
@@ -166,7 +173,7 @@ header {
     }
     a {
       display: inline-block;
-      padding: 0.75rem 1rem;
+      padding: 0.75rem 0.25rem;
       border-bottom: 0px solid transparent;
       color: #000;
       font-size: 1rem;
@@ -182,7 +189,7 @@ header {
 }
 
 //content
-.field-node--field-hero img, .field-node--field-bilderliste img {
+.field--name-field-hero img, .field--name-field-bilderliste img {
   border: 1px solid black;
   width: 100%;
   height: auto;
@@ -222,7 +229,7 @@ article {
   a {
     color: $logo-green;
   }
-  .field-node--body p:first-child {
+  .field--name-body p:first-child {
     margin-top: 0;
   }
 
@@ -239,6 +246,11 @@ article {
       text-decoration: none;
       color: $footer-back;
     }
+  }
+
+  .node__links {
+    text-align: right;
+    font-size: $font-size-small;
   }
 }
 
@@ -262,17 +274,8 @@ ul.inline li {
 }
 
 //node action menu
-main {
-  position: relative;
-  & > .layout-content > ul {
-    display: block;
-    position: absolute;
-    top: -2.5rem;
-    margin: 0;
-    padding: 0;
-    li {
-      display: inline-block;
-    }
+.region-pre-content {
+  nav {
     a {
       padding: 0.2rem 1rem;
       background-color: #dddddd;
@@ -284,13 +287,15 @@ main {
 /* FOOTER */
 body > div > footer {
   border-top: $toolbar-border-width solid $footer-back;
+  font-size: $font-size-small;
 
   & > .region-footer {
     //background-color: $footer-back;
     padding: 1rem 0;
     & > * {
+      padding: 1rem 0;
       & > * {
-        margin: 1rem auto;
+        margin: 0rem auto;
         padding: 0 1rem;
       }
     }
@@ -299,7 +304,11 @@ body > div > footer {
     }
     .menu li {
       list-style: none;
+      display: inline-block;
       margin: 0;
+      a {
+        padding: 0 1rem 0 0;
+      }
     }
     li, footer span {
       display: block;
@@ -308,22 +317,39 @@ body > div > footer {
     * {
       color: $secondary-font-color;
     }
-    #block-footeraddresse {
-      border-style: solid;
-      border-color: $footer-back;
-      border-width: 1px 0px;
-    }
     p {
       margin: 0;
     }
   }
 }
-
+#block-footeraddresse {
+  border-style: solid;
+  border-color: $footer-back;
+  border-width: 1px 0px;
+}
+#block-poweredbydrupal {
+  span {
+    display: block;
+    margin: 0 0 0 auto;
+    a {
+      background-image: url("https://www.drupal.org/files/drupal%208%20logo%20inline%20CMYK%2072.png");
+      background-repeat: no-repeat;
+      color: transparent;
+      background-size: contain;
+      min-width: 90px;
+      display: inline-block;
+      margin-left: 1ex;
+    }
+  }
+}
 //slidebox
 #slidebox {
   position: fixed;
-  top: 0; left: 0; right: 0; height: 100%;
-  background-color: rgba(0,0,0,0.7);
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
   display: none;
   &.open {
     display: block;
@@ -345,9 +371,10 @@ body > div > footer {
     height: auto;
     max-width: 90%;
     border: 5px solid white;
-    box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.7);
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.7);
   }
 }
+
 
 
 @media screen and (min-width: 480px) {
@@ -360,7 +387,7 @@ body > div > footer {
   body.path-frontpage {
     .node__content {
 
-      .field-node--field-hero {
+      .field--name-field-hero {
         //max-width: 110px;
         margin-right: 1rem;
 
@@ -371,7 +398,7 @@ body > div > footer {
           width: 110px;
         }
       }
-      .field-node--body {
+      .field--name-body {
         //min-width: 320px;
       }
     }
@@ -388,7 +415,7 @@ body > div > footer {
   }
   body.path-frontpage {
     .node__content {
-      .field-node--field-hero {
+      .field--name-field-hero {
         //max-width: 166px;
         img {
           width: 166px;
@@ -439,7 +466,7 @@ body > div > footer {
 
   body.path-frontpage {
     .node__content {
-      .field-node--field-hero {
+      .field--name-field-hero {
         img {
           width: 220px;
         }
@@ -447,23 +474,25 @@ body > div > footer {
     }
   }
   body > div > footer > .region-footer {
+    .menu li {
+      display: block;
+    }
     #block-footeraddresse {
       border-style: solid;
-      border-color: $secondary-font-color;
       border-width: 0px 1px;
     }
   }
 
   body:not(.path-frontpage) article .node__content {
 
-    .field-node--field-hero {
+    .field--name-field-hero {
       //@include flex(1, 0, 100%);
     }
-    .field-node--body {
+    .field--name-body {
       min-width: 75%;
       max-width: 100%;
     }
-    .field-node--field-bilderliste {
+    .field--name-field-bilderliste.field__items {
       max-width: 25%;
       padding-left: 1rem;
       img {
@@ -480,12 +509,13 @@ body > div > footer {
   }
 }
 
-//@import url(http://fonts.googleapis.com/css?family=Oxygen:400,300|Signika:400);
-@import url(http://fonts.googleapis.com/css?family=Arimo:400,400italic,700,700italic|Oxygen:400,300,700|Signika:400,300,600,700|Istok+Web:400,400italic,700,700italic);
-
+@import url(http://fonts.googleapis.com/css?family=Oxygen:400,300|Droid+Serif:400);
+//@import url(http://fonts.googleapis.com/css?family=Arimo:400,400italic,700,700italic|Oxygen:400,300,700|Signika:400,300,600,700|Droid+Serif:400,400italic,700,700italic);
+/*
 test {
   font-family: 'Arimo', sans-serif;
   font-family: 'Oxygen', sans-serif;
   font-family: 'Signika', sans-serif;
   font-family: 'Istok Web', sans-serif;
 }
+*/

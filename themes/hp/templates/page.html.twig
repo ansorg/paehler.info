@@ -31,10 +31,6 @@
  * - title: The page title, for use in the actual content.
  * - title_suffix: Additional output populated by modules, intended to be
  *   displayed after the main title tag that appears in the template.
- * - tabs: Tabs linking to any sub-pages beneath the current page (e.g., the
- *   view and edit tabs when displaying a node).
- * - action_links: Actions local to the page, such as "Add menu" on the menu
- *   administration interface.
  * - node: Fully loaded node, if there is an automatically-loaded node
  *   associated with the page and the node ID is the second argument in the
  *   page's path (e.g. node/12345 and node/12345/revisions, but not
@@ -61,49 +57,42 @@
 
   <header role="banner">
     {% if not is_front %}
-      <div id="page-head">
-      {% if logo %}
-        <a href="{{ front_page }}" title="{{ 'Home'|t }}" rel="home">
-          <img src="{{ logo }}" alt="{{ 'Home'|t }}"/>
-        </a>
-      {% endif %}
+    <div id="page-head">
+    {% if logo %}
+      <a href="{{ front_page }}" title="{{ 'Home'|t }}" rel="home">
+        <img src="{{ logo }}" alt="{{ 'Home'|t }}"/>
+      </a>
+    {% endif %}
 
-      {% if site_name or site_slogan %}
-        <div class="name-and-slogan">
+    {% if site_name or site_slogan %}
+      <div class="name-and-slogan">
 
-          {# Use h1 when the content title is empty #}
-          {% if title %}
-            <strong class="site-name">
-              <a href="{{ front_page }}" title="{{ 'Home'|t }}" rel="home">{{ site_name }}</a>
-            </strong>
-          {% else %}
-            <h1 class="site-name">
-              <a href="{{ front_page }}" title="{{ 'Home'|t }}" rel="home">{{ site_name }}</a>
-            </h1>
-          {% endif %}
+        {# Use h1 when the content title is empty #}
+        {% if title %}
+          <strong class="site-name">
+            <a href="{{ front_page }}" title="{{ 'Home'|t }}" rel="home">{{ site_name }}</a>
+          </strong>
+        {% else %}
+          <h1 class="site-name">
+            <a href="{{ front_page }}" title="{{ 'Home'|t }}" rel="home">{{ site_name }}</a>
+          </h1>
+        {% endif %}
 
-          {% if site_slogan %}
-            <div class="site-slogan">{{ site_slogan }}</div>
-          {% endif %}
-        </div>{# ./name-and-slogan #}
-      {% endif %}
+        {% if site_slogan %}
+          <div class="site-slogan">{{ site_slogan }}</div>
+        {% endif %}
+      </div>{# ./name-and-slogan #}
+    {% endif %}
       </div>
     {% endif %}
 
     {{ page.header }}
   </header>
 
-  {{ page.primary_menu }}
-  {{ page.secondary_menu }}
-
-  {{ page.breadcrumb }}
-
-  {{ page.highlighted }}
-
-  {{ page.help }}
 
   <main role="main">
     <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
+    {{ page.pre_content }}
 
     <div class="layout-content">
       {{ page.highlighted }}
@@ -113,13 +102,6 @@
         <h1>{{ title }}</h1>
       {% endif %}
       {{ title_suffix }}
-
-      {{ tabs }}
-
-      {% if action_links %}
-        <nav class="action-links">{{ action_links }}</nav>
-      {% endif %}
-
       {{ page.content }}
     </div>{# /.layout-content #}
 

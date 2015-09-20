@@ -11,6 +11,7 @@ libraries:
 regions:
   header: Header
   #featured: Featured
+  pre_content: 'Pre-content'
   content: Content
   #sidebar_first: First sidebar
   #sidebar_second: Second sidebar

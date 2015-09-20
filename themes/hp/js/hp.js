@@ -49,7 +49,7 @@ hp.slideshow = (function () {
 hp.gallery = function (me) {
 
     me.init = function () {
-        var gallery = document.querySelector('.field-name-field-bilderliste');
+        var gallery = document.querySelector('.field--name-field-bilderliste.field__items');
         if (gallery === null) return;
 
         me.slideBox = document.createElement('div');
