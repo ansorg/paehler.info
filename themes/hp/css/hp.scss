@@ -77,7 +77,7 @@ body.path-frontpage #block-views-block-homepage-slideshow-block-1 {
   border-bottom: 0px solid $toolbar-back;
 }
 
-body:not(.path-frontpage) #page-head {
+body:not(.path-frontpage) #block-seitenkopfmitlogo {
   background-image: url("../images/Logo-Baum-Stuehle.png");
   background-position: -0px bottom;
   background-size: auto 0rem;
@@ -95,6 +95,12 @@ body:not(.path-frontpage) #page-head {
     height: auto;
     margin: auto;
     display: block;
+  }
+  h3 {
+    font-family: 'Droid Serif', serif;
+    font-size: 1.0rem;
+    color: $toolbar-back;
+    padding-bottom: 0.1rem;
   }
 }
 
@@ -379,7 +385,7 @@ body > div > footer {
 
 @media screen and (min-width: 480px) {
   body:not(.path-frontpage) {
-    #page-head {
+    #block-seitenkopfmitlogo {
       margin-left: auto;
       margin-right: auto;
     }
@@ -423,7 +429,7 @@ body > div > footer {
       }
     }
   }
-  body:not(.path-frontpage) #page-head {
+  body:not(.path-frontpage) #block-seitenkopfmitlogo {
     background-size: auto 6rem;
     background-position-x: 1rem;
     margin-bottom: -3px;
@@ -439,6 +445,10 @@ body > div > footer {
       width: 12rem;
       height: auto;
     }
+    h3 {
+      font-size: 1.2rem;
+      padding-bottom: 0.5rem;
+    }
   }
 }
 
@@ -447,7 +457,7 @@ body > div > footer {
     font-size: 1.4rem;
     padding-bottom: 0.5rem;
   }
-  body:not(.path-frontpage) #page-head {
+  body:not(.path-frontpage) #block-seitenkopfmitlogo {
     background-size: auto 9rem;
     background-position-x: 1rem;
     margin-bottom: -4px;
@@ -458,6 +468,9 @@ body > div > footer {
     img {
       width: 15rem;
       height: auto;
+    }
+    h3{
+      padding-bottom: 1rem;
     }
   }
   .site-slogan {
@@ -504,6 +517,7 @@ body > div > footer {
 }
 
 @media screen and (min-width: 1024px) {
+  body:not(.path-frontpage) #block-seitenkopfmitlogo h3,
   .site-slogan {
     font-size: 1.6rem;
   }

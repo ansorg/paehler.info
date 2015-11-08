@@ -47,22 +47,27 @@ h4 {
 body.path-frontpage #block-views-block-homepage-slideshow-block-1 {
   border-bottom: 0px solid #02b053; }
 
-body:not(.path-frontpage) #page-head {
+body:not(.path-frontpage) #block-seitenkopfmitlogo {
   background-image: url("../images/Logo-Baum-Stuehle.png");
   background-position: -0px bottom;
   background-size: auto 0rem;
   background-repeat: no-repeat;
   margin-bottom: -0px; }
-  body:not(.path-frontpage) #page-head > * {
+  body:not(.path-frontpage) #block-seitenkopfmitlogo > * {
     display: block;
     padding: 0.5rem 0;
     margin: auto;
     text-align: center; }
-  body:not(.path-frontpage) #page-head img {
+  body:not(.path-frontpage) #block-seitenkopfmitlogo img {
     width: 10rem;
     height: auto;
     margin: auto;
     display: block; }
+  body:not(.path-frontpage) #block-seitenkopfmitlogo h3 {
+    font-family: 'Droid Serif', serif;
+    font-size: 1.0rem;
+    color: #02b053;
+    padding-bottom: 0.1rem; }
 
 #block-views-block-homepage-slideshow-block-1 {
   background-color: #02b053; }
@@ -265,7 +270,7 @@ body > div > footer {
     box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.7); }
 
 @media screen and (min-width: 480px) {
-  body:not(.path-frontpage) #page-head {
+  body:not(.path-frontpage) #block-seitenkopfmitlogo {
     margin-left: auto;
     margin-right: auto; }
 
@@ -287,7 +292,7 @@ body > div > footer {
   body.path-frontpage .node__content .field--name-field-hero img {
     width: 166px; }
 
-  body:not(.path-frontpage) #page-head {
+  body:not(.path-frontpage) #block-seitenkopfmitlogo {
     background-size: auto 6rem;
     background-position-x: 1rem;
     margin-bottom: -3px;
@@ -295,27 +300,32 @@ body > div > footer {
     border-style: solid;
     border-color: white;
     max-width: 60rem; }
-    body:not(.path-frontpage) #page-head > * {
+    body:not(.path-frontpage) #block-seitenkopfmitlogo > * {
       margin-left: 5rem;
       padding: 0.5rem 0; }
-    body:not(.path-frontpage) #page-head img {
+    body:not(.path-frontpage) #block-seitenkopfmitlogo img {
       width: 12rem;
-      height: auto; } }
+      height: auto; }
+    body:not(.path-frontpage) #block-seitenkopfmitlogo h3 {
+      font-size: 1.2rem;
+      padding-bottom: 0.5rem; } }
 @media screen and (min-width: 768px) {
   .site-slogan {
     font-size: 1.4rem;
     padding-bottom: 0.5rem; }
 
-  body:not(.path-frontpage) #page-head {
+  body:not(.path-frontpage) #block-seitenkopfmitlogo {
     background-size: auto 9rem;
     background-position-x: 1rem;
     margin-bottom: -4px; }
-    body:not(.path-frontpage) #page-head > * {
+    body:not(.path-frontpage) #block-seitenkopfmitlogo > * {
       margin-left: 10rem;
       padding: 1rem 0; }
-    body:not(.path-frontpage) #page-head img {
+    body:not(.path-frontpage) #block-seitenkopfmitlogo img {
       width: 15rem;
       height: auto; }
+    body:not(.path-frontpage) #block-seitenkopfmitlogo h3 {
+      padding-bottom: 1rem; }
 
   .site-slogan {
     padding-bottom: 1rem; }
@@ -339,6 +349,7 @@ body > div > footer {
       width: 100%;
       height: auto; } }
 @media screen and (min-width: 1024px) {
+  body:not(.path-frontpage) #block-seitenkopfmitlogo h3,
   .site-slogan {
     font-size: 1.6rem; } }
 /*
