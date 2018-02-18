@@ -101,6 +101,7 @@ body:not(.path-frontpage) #block-seitenkopfmitlogo {
     font-size: 1.0rem;
     color: $toolbar-back;
     padding-bottom: 0.1rem;
+
   }
 }
 
@@ -260,6 +261,12 @@ article {
   }
 }
 
+.field--name-body p iframe {
+  width: 320px;
+  height: 180px;
+  margin: 0 -16px;
+}
+
 //system elements
 #block-useraccountmenu {
   position: absolute;
@@ -328,11 +335,13 @@ body > div > footer {
     }
   }
 }
+
 #block-footeraddresse {
   border-style: solid;
   border-color: $footer-back;
   border-width: 1px 0px;
 }
+
 #block-poweredbydrupal {
   span {
     display: block;
@@ -348,6 +357,7 @@ body > div > footer {
     }
   }
 }
+
 //slidebox
 #slidebox {
   position: fixed;
@@ -381,8 +391,6 @@ body > div > footer {
   }
 }
 
-
-
 @media screen and (min-width: 480px) {
   body:not(.path-frontpage) {
     #block-seitenkopfmitlogo {
@@ -407,8 +415,15 @@ body > div > footer {
       .field--name-body {
         //min-width: 320px;
       }
+
     }
   }
+  .field--name-body p iframe {
+    width: 448px;
+    height: 252px;
+    margin: 0 -16px;
+  }
+
 }
 
 @media screen and (min-width: 640px) {
@@ -469,8 +484,13 @@ body > div > footer {
       width: 15rem;
       height: auto;
     }
-    h3{
+    h3 {
       padding-bottom: 1rem;
+      /*für umbruch im Titel:
+      margin: 0;
+      &:first-of-type {
+        border-bottom: 1px solid $logo-orange;
+      }*/
     }
   }
   .site-slogan {
@@ -513,6 +533,11 @@ body > div > footer {
         height: auto;
       }
     }
+  }
+
+  .field--name-body p iframe {
+    width: 560px;
+    height: 315px;
   }
 }
 
