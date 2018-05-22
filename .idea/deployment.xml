@@ -1,36 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="mx.hp">
+  <component name="PublishConfigData">
     <serverData>
-      <paths name="d8.buchmeier">
+      <paths name="hp">
+        <serverdata>
+          <mappings>
+            <mapping deploy="." local="$PROJECT_DIR$/themes/hp" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="xfsd-FSEDemo">
         <serverdata>
           <mappings>
             <mapping local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>
-      <paths name="dist to MX415">
-        <serverdata>
-          <mappings>
-            <mapping deploy="\" local="$PROJECT_DIR$" web="/" />
-          </mappings>
-        </serverdata>
-      </paths>
-      <paths name="mx.drupal">
+      <paths name="xfsd-live">
         <serverdata>
           <mappings>
             <mapping local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>
-      <paths name="mx.hp">
-        <serverdata>
-          <mappings>
-            <mapping deploy="hp" local="$PROJECT_DIR$/themes/hp" web="/hp" />
-          </mappings>
-        </serverdata>
-      </paths>
-      <paths name="mx.mb">
+      <paths name="xfsd.ansorg-web.de">
         <serverdata>
           <mappings>
             <mapping local="$PROJECT_DIR$" web="/" />

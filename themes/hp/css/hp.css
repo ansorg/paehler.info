@@ -1,5 +1,4 @@
 @charset "UTF-8";
-@import url(http://fonts.googleapis.com/css?family=Oxygen:400,300|Droid+Serif:400);
 html, body, div, p, header, footer, main, nav, ul, li, a, span, img {
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
@@ -206,30 +205,31 @@ ul.inline li {
   color: #02b053; }
 
 /* FOOTER */
-body > div > footer {
+footer {
   border-top: 2px solid #fb9e6c;
   font-size: 0.9rem; }
-  body > div > footer > .region-footer {
+  footer .region-footer {
     padding: 1rem 0; }
-    body > div > footer > .region-footer > * {
+    footer .region-footer > * {
       padding: 1rem 0; }
-      body > div > footer > .region-footer > * > * {
+      footer .region-footer > * > * {
         margin: 0rem auto;
         padding: 0 1rem; }
-    body > div > footer > .region-footer .menu {
+    footer .region-footer .menu {
       list-style: none; }
-    body > div > footer > .region-footer .menu li {
+    footer .region-footer .menu li {
       list-style: none;
       display: inline-block;
       margin: 0; }
-      body > div > footer > .region-footer .menu li a {
-        padding: 0 1rem 0 0; }
-    body > div > footer > .region-footer li, body > div > footer > .region-footer footer span {
+      footer .region-footer .menu li a {
+        padding: 0 1rem 0 0;
+        color: #02b053; }
+    footer .region-footer li, footer .region-footer footer span {
       display: block;
       padding: 0; }
-    body > div > footer > .region-footer * {
+    footer .region-footer * {
       color: #555555; }
-    body > div > footer > .region-footer p {
+    footer .region-footer p {
       margin: 0; }
 
 #block-footeraddresse {
@@ -372,13 +372,5 @@ body > div > footer {
   body:not(.path-frontpage) #block-seitenkopfmitlogo h3,
   .site-slogan {
     font-size: 1.6rem; } }
-/*
-test {
-  font-family: 'Arimo', sans-serif;
-  font-family: 'Oxygen', sans-serif;
-  font-family: 'Signika', sans-serif;
-  font-family: 'Istok Web', sans-serif;
-}
-*/
 
 /*# sourceMappingURL=hp.css.map */
